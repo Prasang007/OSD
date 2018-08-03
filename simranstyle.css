@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700");
+body {
+  font-family: "Noto Sans";
+  min-height: 100vh;
+  background-color: #4158d0;
+  background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+body:after {
+  content: "";
+  display: block;
+  background: url("https://ismanfromes.be/projets/codepen/if.svg") no-repeat;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0.2;
+}
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  z-index: 10;
+  pointer-events: none;
+}
+.button-container .letter {
+  position: absolute;
+  font-size: 70px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 10;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  pointer-events: painted;
+}
+.button-container .letter:hover {
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+}
+.button-container .m {
+  top: 0;
+  left: 0;
+}
+.button-container .m:hover {
+  top: -4px;
+  -webkit-transform: rotate(11deg);
+          transform: rotate(11deg);
+}
+.button-container .e {
+  top: 0;
+  right: 0;
+}
+.button-container .e:hover {
+  top: 2px;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+.button-container .n {
+  bottom: 0;
+  left: 0;
+}
+.button-container .n:hover {
+  bottom: -2px;
+  -webkit-transform: rotate(-8deg);
+          transform: rotate(-8deg);
+}
+.button-container .u {
+  bottom: 0;
+  right: 0;
+}
+.button-container .u:hover {
+  bottom: 3px;
+  -webkit-transform: rotate(6deg);
+          transform: rotate(6deg);
+}
+.button-container .message {
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  bottom: -38px;
+  width: 100%;
+  text-align: center;
+  opacity: 0.75;
+  transition: all 0.2s ease;
+}
+.button-container .message strong {
+  font-weight: 600;
+  margin-right: 3px;
+}
+.menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  transition: opacity 0.3s ease, -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease, -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu.appear {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+.menu .menu-item {
+  margin: 0;
+}
+.menu a {
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+}
+.menu > ol {
+  display: flex;
+}
+.menu > ol > .menu-item {
+  position: relative;
+  z-index: 1;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+.menu > ol > .menu-item a {
+  position: relative;
+  display: block;
+  padding: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  background: black;
+  z-index: 10;
+}
+.menu > ol > .menu-item:hover {
+  -webkit-transform: rotate(6deg);
+          transform: rotate(6deg);
+}
+.menu > ol > .menu-item:hover .sub-menu {
+  top: 56px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.menu > ol > .menu-item:nth-child(1) {
+  position: absolute;
+  left: 10%;
+  top: 15%;
+}
+.menu > ol > .menu-item:nth-child(2) {
+  position: absolute;
+  left: 25%;
+  top: 75%;
+}
+.menu > ol > .menu-item:nth-child(3) {
+  position: absolute;
+  left: 88%;
+  top: 15%;
+}
+.menu > ol > .menu-item:nth-child(4) {
+  position: absolute;
+  left: 72%;
+  top: 60%;
+}
+.menu > ol > .menu-item:nth-child(5) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.menu > ol ol {
+  padding-left: 10px;
+  position: absolute;
+}
+.menu > ol .sub-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  transition: all 0.3s ease;
+}
+.menu > ol .sub-menu li {
+  margin-top: 2px;
+  transition: padding 0.2s ease;
+}
+.menu > ol .sub-menu li a {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+.menu > ol .sub-menu li:hover {
+  padding-left: 10px;
+}
